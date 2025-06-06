@@ -7,24 +7,21 @@ common_caps:
   "visual": false
   "network": false
   "console": false
+  "w3c": true
+  "autoGrantPermissions": true
+  "autoAcceptAlerts": true
 
-app_caps:
+browser_caps:
   -
     "isRealMobile": "true"
     "platform": "Android"
-    "deviceName": "Galaxy A31"
-    "platformVersion": "10"
-    "app": "APP_URL"   #Add the app url here
-  -
-    "isRealMobile": "true"
-    "platform": "Android"
-    "deviceName": "Galaxy A32"
+    "deviceName": "Pixel 5"
     "platformVersion": "11"
-    "app": "APP_URL"   #Add the app url here
+    "app": "lt://APP10160301691747362768822447"
   -
     "isRealMobile": "true"
-    "platform": "iOS"
-    "deviceName": "iPhone 13 Pro"
-    "platformVersion": "15.0"
-    "app": "APP_URL"   #Add the app url here
+    "platform": "Android"
+    "deviceName": "Galaxy S21"
+    "platformVersion": "12"
+    "app": "lt://APP10160301691747362768822447"
 

@@ -1,0 +1,35 @@
+{
+  "project": "LT-appium-ruby-rspec",
+  "dependencies": {
+    "ruby": ">= 2.7.0",
+    "bundler": ">= 2.0.0",
+    "gems": {
+      "rake": "~> 13.1.0",
+      "selenium-webdriver": "~> 4.21.0",
+      "rspec-core": "~> 3.13.0",
+      "rspec": "~> 3.13.0",
+      "parallel": "~> 1.24.0",
+      "appium_lib": "~> 16.1.0",
+      "ffi": "~> 1.16.3"
+    }
+  },
+  "app_ids": {
+    "android": "lt://APP10160301691747362768822447",
+    "ios": "lt://APP1016019351747817555938149",
+    "apple_tv": "lt://APP1016019351748009576259457"
+  },
+  "credentials": {
+    "username": "LT_USERNAME",
+    "access_key": "LT_ACCESS_KEY"
+  },
+  "devices": {
+    "android": {
+      "deviceName": "Pixel 5",
+      "platformVersion": "11"
+    },
+    "ios": {
+      "deviceName": "iPhone 14",
+      "platformVersion": "16"
+    }
+  }
+} 
