@@ -40,6 +40,89 @@ export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
 ```
 
 **Windows:**
+**Tip:**
+
+- If you do not have any **.apk** or **.ipa** file, you can run your sample tests on LambdaTest by using our sample :link: [Android app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk) or sample :link: [iOS app](https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_ios.ipa).
+- Response of above cURL will be a **JSON** object containing the `APP_URL` of the format - <lt://APP123456789123456789> and will be used in the next step.
+
+## Run Your First Test
+
+**Test Scenario:** Check out [single.config.yml](https://github.com/LambdaTest/LT-appium-ruby-cucumber/blob/master/Android/examples/First_test/features/step_definitions/first_steps.rb) file to view the sample test script for single test case and [parallel.config.yml](https://github.com/LambdaTest/LT-appium-ruby-cucumber/blob/master/iOS/examples/First_test/features/step_definitions/first_steps.rb) for parallel test cases.
+
+### Configuring Your Test Capabilities
+
+You can update your custom capabilities in test scripts. In this sample project, we are passing platform name, platform version, device name and app url (generated earlier) along with other capabilities like build name and test name via capabilities object. The capabilities object in the sample code are defined as:
+
+<Tabs className="docs__val">
+
+<TabItem value="ios-config" label="iOS" default>
+
+```ruby title="iOS(.ipa)"
+
+common_caps:
+  "build": "RSpec Appium"
+  "visual": false
+  "network": false
+  "console": false
+
+app_caps:
+  -
+    "isRealMobile": "true"
+    "platform": "iOS"
+    "deviceName": "iPhone 13 Pro"
+    "platformVersion": "15.0"
+    "app": "APP_URL"   #Add the app (.ipa) url here
+```
+
+</TabItem>
+<TabItem value="android-config" label="Android" default>
+
+```ruby title="Android(.apk)"
+common_caps:
+  "build": "RSpec Appium"
+  "visual": false
+  "network": false
+  "console": false
+
+app_caps:
+  -
+    "isRealMobile": "true"
+    "platform": "Android"
+    "deviceName": "Galaxy A31"
+    "platformVersion": "10"
+    "app": "APP_URL"   #Add the app (.apk) url here
+```
+**W3C Capabilities**
+
+```bash
+    caps = {
+      "platformName" => "Android",
+      "appium:deviceName" => "Galaxy S24",
+      "appium:platformVersion" => "14",
+      "appium:app" => "lt://proverbial-android",
+      "appium:isRealMobile" => true,
+      "appium:automationName" => "UiAutomator2",
+      "lt:options" => {
+        "user" => username,
+        "accessKey" => accessToken,
+        "build" => "RSpec-Android-Build",
+        "name" => "RSpec Sample Test",
+        "w3c" => true
+      }
+    }
+```
+</TabItem>
+
+</Tabs>
+
+**Info Note:**
+
+- You must add the generated **APP_URL** to the `"app"` capability in the config file.
+- You can generate capabilities for your test requirements with the help of our inbuilt **[Capabilities Generator tool](https://www.lambdatest.com/capabilities-generator/)**. A more Detailed Capability Guide is available [here](https://www.lambdatest.com/support/docs/desired-capabilities-in-appium/).
+
+## Executing The Tests
+
+1. Run the following command to make sure that all the dependencies required for the test are instaled.
 
 ```bash
 set LT_USERNAME="YOUR_USERNAME"
@@ -49,7 +132,7 @@ set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
 ### Run tests
 
 ```bash
-bundle exec rake single
+bundle exec rspec spec/app_automation.rb
 ```
 
 View results on your TestMu AI dashboard.
