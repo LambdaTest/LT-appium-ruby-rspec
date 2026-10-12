@@ -1,5 +1,7 @@
 # Run Appium Tests with Ruby and RSpec on TestMu AI (Formerly LambdaTest)
 
+> Cross-device End-to-End (E2E) testing of mobile apps with Appium, Ruby, and RSpec on TestMu AI's real devices and operating systems.
+
 <p align="center">
   <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
   <a href="https://rubygems.org/gems/rspec"><img src="https://img.shields.io/gem/v/rspec.svg?style=for-the-badge&labelColor=000000" alt="RSpec version"></a>
